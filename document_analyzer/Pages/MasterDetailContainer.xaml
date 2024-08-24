@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="document_analyzer.Pages.MasterDetailContainer"
+            FlyoutLayoutBehavior="Popover">
+    <FlyoutPage.Flyout>
+        <ContentPage Title="Menu">
+            <StackLayout>
+                <Label Text="Menu" 
+                       FontSize="24" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Start" 
+                       Padding="10" />
+                <Button Text="Dashboard" Clicked="OnDashboardButtonClicked"/>
+                <Button Text="Logout" Clicked="OnLogoutButtonClicked"/>
+                <!-- Add more menu items here -->
+            </StackLayout>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+    <FlyoutPage.Detail>
+        <NavigationPage x:Name="DetailPage">
+            <x:Arguments>
+                <ContentPage Title="Home">
+                    <StackLayout>
+                        <Label Text="Welcome to the Flyout Page!" 
+                               HorizontalOptions="Center"
+                               VerticalOptions="CenterAndExpand" />
+                    </StackLayout>
+                </ContentPage>
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>
+
+
+

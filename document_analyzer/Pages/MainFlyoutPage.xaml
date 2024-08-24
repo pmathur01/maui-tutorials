@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="document_analyzer.Pages.MainFlyoutPage"
+            FlyoutLayoutBehavior="Popover"
+            NavigationPage.HasBackButton="False">
+
+    <!-- Flyout Menu -->
+    <FlyoutPage.Flyout>
+        <ContentPage Title="Settings Menu">
+            <StackLayout>
+                <Label Text="Settings Menu" FontSize="Large" Padding="10"/>
+                <Button Text="Option 1" />
+                <Button Text="Option 2" />
+                <Button Text="Option 3" />
+                <Button Text="Close" Clicked="OnCloseButtonClicked" />
+            </StackLayout>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+
+    <!-- TabbedPage as Detail -->
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <TabbedPage>
+                    <TabbedPage.Children>
+                        <ContentPage Title="Home">
+                            <StackLayout Padding="30">
+                                <Label Text="Welcome to the Home Page" FontSize="Large" HorizontalOptions="Center"/>
+                            </StackLayout>
+                        </ContentPage>
+                        <ContentPage Title="Profile">
+                            <StackLayout Padding="30">
+                                <Label Text="This is the Profile Page" FontSize="Large" HorizontalOptions="Center"/>
+                            </StackLayout>
+                        </ContentPage>
+                        <ContentPage Title="Settings" >
+                            <StackLayout Padding="30">
+                                <Label Text="This is the Settings Page" FontSize="Large" HorizontalOptions="Center"/>
+                            </StackLayout>
+                        </ContentPage>
+                    </TabbedPage.Children>
+                </TabbedPage>
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>
+
